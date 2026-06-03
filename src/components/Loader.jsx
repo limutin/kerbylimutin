@@ -3,110 +3,104 @@ import { useEffect, useState } from 'react'
 
 const Loader = () => {
   const [progress, setProgress] = useState(0)
-  const [phase, setPhase] = useState('INITIALIZING')
+  const [phase, setPhase] = useState('BOOT SEQUENCE INITIATED')
 
-  const phases = ['INITIALIZING', 'LOADING MODULES', 'RENDERING UI', 'COMPLETE']
+  const phases = [
+    'BOOT SEQUENCE INITIATED',
+    'LOADING SYSTEM MODULES',
+    'ESTABLISHING SECURE CHANNELS',
+    'RENDERING GRAPHICAL UI',
+    'SYSTEM READY'
+  ]
 
   useEffect(() => {
     let p = 0
     const interval = setInterval(() => {
-      p += Math.random() * 18 + 4
+      p += Math.random() * 15 + 3
       if (p >= 100) {
         p = 100
         clearInterval(interval)
       }
-      setProgress(Math.min(p, 100))
-      const idx = Math.floor((Math.min(p, 100) / 100) * (phases.length - 1))
+      const roundedP = Math.floor(p)
+      setProgress(roundedP)
+      
+      const idx = Math.floor((roundedP / 100) * (phases.length - 1))
       setPhase(phases[idx])
-    }, 120)
+    }, 80)
     return () => clearInterval(interval)
   }, [])
 
   return (
     <div
-      className="fixed inset-0 z-[9999] flex flex-col items-center justify-center"
+      className="fixed inset-0 z-[9999] flex flex-col items-center justify-center select-none"
       style={{ background: '#050507' }}
     >
-      {/* Top-left label */}
-      <div className="absolute left-6 top-6 font-mono text-[10px] uppercase tracking-[0.25em]" style={{ color: '#606078' }}>
-        /system/boot.run
+      {/* Top-left label: location details */}
+      <div className="absolute left-8 top-8 font-mono text-[9px] uppercase tracking-[0.2em] text-[#606078] flex items-center gap-2">
+        <span className="w-1.5 h-1.5 rounded-full bg-[#5EFFAA] animate-pulse" />
+        <span>OROQUIETA CITY, PH</span>
       </div>
 
-      {/* Top-right label */}
-      <div className="absolute right-6 top-6 font-mono text-[10px] uppercase tracking-[0.25em]" style={{ color: '#606078' }}>
-        INDEX · 0001
+      {/* Top-right label: boot command */}
+      <div className="absolute right-8 top-8 font-mono text-[9px] uppercase tracking-[0.2em] text-[#606078]">
+        SYS.BOOT_SEQUENCE // V1.0.0
       </div>
 
-      {/* Corner decorations */}
-      <div className="absolute left-6 bottom-6 h-4 w-4" style={{ borderLeft: '0.5px solid rgba(255,255,255,0.25)', borderBottom: '0.5px solid rgba(255,255,255,0.25)' }} />
-      <div className="absolute right-6 bottom-6 h-4 w-4" style={{ borderRight: '0.5px solid rgba(255,255,255,0.25)', borderBottom: '0.5px solid rgba(255,255,255,0.25)' }} />
-      <div className="absolute left-6 top-14 h-4 w-4" style={{ borderLeft: '0.5px solid rgba(255,255,255,0.25)', borderTop: '0.5px solid rgba(255,255,255,0.25)' }} />
-      <div className="absolute right-6 top-14 h-4 w-4" style={{ borderRight: '0.5px solid rgba(255,255,255,0.25)', borderTop: '0.5px solid rgba(255,255,255,0.25)' }} />
-
-      {/* Center — Logo */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.85 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        className="relative flex flex-col items-center"
-      >
-        {/* Logo badge */}
-        <div
-          className="w-16 h-16 rounded-2xl flex items-center justify-center text-xl font-semibold text-white mb-5"
-          style={{
-            background: 'linear-gradient(135deg, #C17BE8, #6080FF)',
-            boxShadow: '0 20px 60px -10px rgba(127,80,220,0.55), inset 0 1px 0 rgba(255,255,255,0.3)',
-            border: '0.5px solid rgba(255,255,255,0.15)',
-          }}
-        >
-          KL
-        </div>
-
-        <div
-          className="text-[14px] font-medium tracking-tight mb-1"
-          style={{ color: '#e8e8f0' }}
-        >
-          Kerby Limutin
-        </div>
-        <div
-          className="font-mono text-[10px] uppercase tracking-[0.3em] mb-10"
-          style={{ color: '#606078' }}
-        >
-          Developer · Builder
-        </div>
-
-        {/* Phase label */}
+      {/* Center content container */}
+      <div className="flex flex-col items-center justify-center w-full max-w-lg px-6">
+        
+        {/* Logo Badge */}
         <motion.div
-          className="mb-4 h-4 font-mono text-[11px] uppercase tracking-[0.3em]"
-          style={{ color: '#a0a0b8' }}
-          animate={{ opacity: [0.5, 1, 0.5] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+          className="flex flex-col items-center mb-16"
         >
-          <span className="mr-2" style={{ color: '#606078' }}>›</span>
-          {phase}
+          <div
+            className="w-14 h-14 rounded-2xl flex items-center justify-center text-lg font-bold text-white mb-4"
+            style={{
+              background: 'linear-gradient(135deg, #C17BE8, #6080FF)',
+              boxShadow: '0 15px 45px -10px rgba(127,80,220,0.5), inset 0 1px 0 rgba(255,255,255,0.2)',
+              border: '0.5px solid rgba(255,255,255,0.12)',
+            }}
+          >
+            KL
+          </div>
+          <h2 className="text-[12px] font-medium tracking-tight text-gray-200 mb-0.5">Kerby Limutin</h2>
+          <p className="font-mono text-[9px] uppercase tracking-[0.25em] text-[#606078]">Developer · Builder</p>
         </motion.div>
 
-        {/* Progress bar */}
-        <div
-          className="relative h-[2px] w-[420px] max-w-[80vw] overflow-hidden rounded-full"
-          style={{ background: 'rgba(255,255,255,0.06)' }}
-        >
-          <motion.div
-            className="absolute inset-y-0 left-0 rounded-full"
+        {/* Big Progress Number Display */}
+        <div className="flex items-baseline justify-center mb-8 font-mono">
+          <span className="text-[110px] sm:text-[130px] font-medium leading-none text-gray-100 tracking-tighter">
+            {progress.toString().padStart(3, '0')}
+          </span>
+          <span className="text-xs text-[#606078] tracking-widest ml-3">
+            / 100
+          </span>
+        </div>
+
+        {/* Terminal Boot Phase Description */}
+        <div className="h-6 flex items-center justify-center mb-8 font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-gray-400">
+          <span className="text-[#606078] mr-2 animate-pulse">&gt;</span>
+          <span>{phase}</span>
+          <span className="w-1 h-3.5 bg-primary-400 ml-1.5 animate-pulse" />
+        </div>
+
+        {/* Slim Progress Bar */}
+        <div className="relative h-[2px] w-full bg-white/[0.04] rounded-full overflow-hidden mb-2">
+          <div
+            className="h-full rounded-full transition-all duration-100"
             style={{
+              width: `${progress}%`,
               background: 'linear-gradient(90deg, #C17BE8 0%, #8AA0FF 50%, #6080FF 100%)',
-              boxShadow: '0 0 14px rgba(193,123,232,0.55)',
+              boxShadow: '0 0 10px rgba(193,123,232,0.4)',
             }}
-            animate={{ width: `${progress}%` }}
-            transition={{ ease: 'easeOut', duration: 0.3 }}
           />
         </div>
 
-        {/* Scale markers */}
-        <div
-          className="mt-2 flex w-[420px] max-w-[80vw] items-center justify-between font-mono text-[9px] uppercase tracking-[0.2em]"
-          style={{ color: 'rgba(255,255,255,0.3)' }}
-        >
+        {/* Scale labels */}
+        <div className="flex w-full items-center justify-between font-mono text-[8px] uppercase tracking-[0.2em] text-[#606078] mb-12">
           <span>0</span>
           <span>25</span>
           <span>50</span>
@@ -114,24 +108,18 @@ const Loader = () => {
           <span>100</span>
         </div>
 
-        {/* Footer info */}
-        <div
-          className="mt-6 flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.25em]"
-          style={{ color: '#606078' }}
-        >
-          <span>Kerby Limutin</span>
-          <span
-            className="h-[3px] w-[3px] rounded-full"
-            style={{ background: 'rgba(255,255,255,0.25)' }}
-          />
-          <span>Developer · Builder</span>
-          <span
-            className="h-[3px] w-[3px] rounded-full"
-            style={{ background: 'rgba(255,255,255,0.25)' }}
-          />
-          <span>v1.0.0</span>
+        {/* Footer info metadata */}
+        <div className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#606078] flex items-center gap-2 flex-wrap justify-center text-center">
+          <span>KERBY LIMUTIN</span>
+          <span className="w-1 h-1 rounded-full bg-white/20" />
+          <span>DEVELOPER</span>
+          <span className="w-1 h-1 rounded-full bg-white/20" />
+          <span>BUILDER</span>
+          <span className="w-1 h-1 rounded-full bg-white/20" />
+          <span>V1.0.0</span>
         </div>
-      </motion.div>
+
+      </div>
     </div>
   )
 }
