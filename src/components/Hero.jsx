@@ -92,9 +92,8 @@ const Hero = () => {
                 style={{ fontSize: 'clamp(40px, 6vw, 76px)', color: '#e8e8f0' }}
               >
                 I build<br />
-                <span className="italic-gradient" style={{ letterSpacing: '-0.02em' }}>thoughtful</span>{' '}
-                software<br />
-                <span style={{ color: '#606078' }}>with care.</span>
+                <span className="italic-gradient" style={{ letterSpacing: '-0.02em' }}>digital solutions</span><br />
+                <span style={{ color: '#606078' }}>that matter.</span>
               </h1>
 
               {/* Typewriter role */}
