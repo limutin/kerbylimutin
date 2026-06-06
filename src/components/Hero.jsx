@@ -66,18 +66,18 @@ const Hero = () => {
             >
               <span className="section-index mb-0">001 — Introduction</span>
               <div
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-medium"
+                className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-[10px] font-medium font-mono uppercase tracking-wider"
                 style={{
-                  border: '0.5px solid rgba(255,255,255,0.15)',
-                  background: 'rgba(255,255,255,0.04)',
-                  color: '#e8e8f0',
+                  border: '0.5px solid rgba(94,255,170,0.25)',
+                  background: 'rgba(94,255,170,0.04)',
+                  color: '#5EFFAA',
                   backdropFilter: 'blur(8px)',
                 }}
               >
                 <span className="signal-dot">
                   <span className="signal-dot-inner" />
                 </span>
-                Open to opportunities
+                Available for internships, freelance, & junior developer roles
               </div>
             </motion.div>
 
@@ -88,12 +88,11 @@ const Hero = () => {
               transition={{ delay: 0.3, duration: 0.7 }}
             >
               <h1
-                className="font-medium leading-[1.04] tracking-[-0.04em]"
-                style={{ fontSize: 'clamp(40px, 6vw, 76px)', color: '#e8e8f0' }}
+                className="font-medium leading-[1.08] tracking-[-0.04em]"
+                style={{ fontSize: 'clamp(40px, 5.5vw, 72px)', color: '#e8e8f0' }}
               >
-                I build<br />
-                <span className="italic-gradient" style={{ letterSpacing: '-0.02em' }}>digital solutions</span><br />
-                <span style={{ color: '#606078' }}>that matter.</span>
+                Engineering reliable systems<br />
+                <span className="italic-gradient" style={{ letterSpacing: '-0.02em' }}>that solve real&nbsp;problems.</span>
               </h1>
 
               {/* Typewriter role */}
@@ -273,51 +272,7 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Bottom Stats Row */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.0, duration: 0.6 }}
-          className="mt-24 grid grid-cols-2 md:grid-cols-4"
-          style={{ borderTop: '0.5px solid rgba(255,255,255,0.06)', borderBottom: '0.5px solid rgba(255,255,255,0.06)' }}
-        >
-          {[
-            { value: '10+', suffix: '', label: 'Projects shipped' },
-            { value: '3+', suffix: 'yr', label: 'Building' },
-            { value: '185+', suffix: '', label: 'GitHub commits' },
-            { value: '∞', suffix: '', label: 'Curiosity', italic: true },
-          ].map((stat, i) => (
-            <div
-              key={i}
-              className="px-6 py-8"
-              style={{ borderRight: i < 3 ? '0.5px solid rgba(255,255,255,0.06)' : 'none' }}
-            >
-              <div
-                className="tabular-nums leading-none tracking-[-0.03em]"
-                style={{
-                  fontSize: stat.italic ? '3.5rem' : '2.25rem',
-                  fontWeight: 500,
-                  color: '#e8e8f0',
-                  fontStyle: stat.italic ? 'italic' : 'normal',
-                  background: stat.italic ? 'linear-gradient(135deg, #8AA0FF, #C17BE8)' : undefined,
-                  WebkitBackgroundClip: stat.italic ? 'text' : undefined,
-                  WebkitTextFillColor: stat.italic ? 'transparent' : undefined,
-                }}
-              >
-                {stat.value}
-                {stat.suffix && (
-                  <span style={{ fontSize: '1.375rem', color: '#606078' }}>{stat.suffix}</span>
-                )}
-              </div>
-              <div
-                className="mt-2.5 font-mono text-[10px] uppercase tracking-[0.15em]"
-                style={{ color: '#606078' }}
-              >
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </motion.div>
+
       </motion.div>
     </section>
   )

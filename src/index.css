@@ -78,19 +78,20 @@
     -webkit-background-clip: text;
     color: transparent;
     background-image: linear-gradient(135deg, #C17BE8 0%, #9080F0 50%, #6080FF 100%);
+    padding-right: 0.15em;
   }
 
   /* ============ LAYOUT ============ */
   .section-padding {
-    padding: 5rem 1.25rem;
+    padding: 6.5rem 1.5rem;
   }
 
   @media (min-width: 640px) {
-    .section-padding { padding: 6rem 2rem; }
+    .section-padding { padding: 8.5rem 2.5rem; }
   }
 
   @media (min-width: 1024px) {
-    .section-padding { padding: 7rem 3rem; }
+    .section-padding { padding: 10.5rem 4rem; }
   }
 
   .container-custom {

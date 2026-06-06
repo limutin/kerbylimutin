@@ -185,6 +185,51 @@ const About = () => {
             </motion.div>
           </motion.div>
         </div>
+
+        {/* Key Metrics Row */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.6, duration: 0.6 }}
+          className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-4"
+        >
+          {[
+            { value: '10+', suffix: '', label: 'Projects Shipped' },
+            { value: '3+', suffix: 'yr', label: 'Systems Building' },
+            { value: '185+', suffix: '', label: 'GitHub Commits' },
+            { value: '∞', suffix: '', label: 'Tech Curiosity', italic: true },
+          ].map((stat, i) => (
+            <div
+              key={i}
+              className="glass-card p-6 text-center card-corners border border-white/[0.04] relative overflow-hidden"
+              style={{ borderRadius: '4px' }}
+            >
+              <div
+                className="tabular-nums leading-none tracking-[-0.03em] font-mono"
+                style={{
+                  fontSize: '2rem',
+                  fontWeight: 600,
+                  color: '#e8e8f0',
+                  fontStyle: stat.italic ? 'italic' : 'normal',
+                  background: stat.italic ? 'linear-gradient(135deg, #8AA0FF, #C17BE8)' : undefined,
+                  WebkitBackgroundClip: stat.italic ? 'text' : undefined,
+                  WebkitTextFillColor: stat.italic ? 'transparent' : undefined,
+                }}
+              >
+                {stat.value}
+                {stat.suffix && (
+                  <span className="text-sm text-gray-500 font-mono font-normal ml-0.5">{stat.suffix}</span>
+                )}
+              </div>
+              <div
+                className="mt-3 font-mono text-[9px] uppercase tracking-[0.18em]"
+                style={{ color: '#606078' }}
+              >
+                {stat.label}
+              </div>
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   )

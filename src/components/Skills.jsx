@@ -12,34 +12,34 @@ const categories = [
 
 const skills = [
   // Frontend
-  { name: 'HTML5', level: 95, category: 'frontend', color: '#E34F26', icon: '🌐' },
-  { name: 'CSS3 / Tailwind', level: 92, category: 'frontend', color: '#06B6D4', icon: '🎨' },
-  { name: 'JavaScript', level: 90, category: 'frontend', color: '#F7DF1E', icon: '⚡' },
-  { name: 'React / Next.js', level: 88, category: 'frontend', color: '#61DAFB', icon: '⚛️' },
-  { name: 'TypeScript', level: 80, category: 'frontend', color: '#3178C6', icon: '📘' },
+  { name: 'HTML5', level: 95, category: 'frontend', color: '#E34F26', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg' },
+  { name: 'CSS3 / Tailwind', level: 92, category: 'frontend', color: '#06B6D4', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg' },
+  { name: 'JavaScript', level: 90, category: 'frontend', color: '#F7DF1E', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg' },
+  { name: 'React / Next.js', level: 88, category: 'frontend', color: '#61DAFB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' },
+  { name: 'TypeScript', level: 80, category: 'frontend', color: '#3178C6', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg' },
 
   // Backend
-  { name: 'PHP / Laravel', level: 85, category: 'backend', color: '#777BB4', icon: '🐘' },
-  { name: 'Python', level: 78, category: 'backend', color: '#3776AB', icon: '🐍' },
-  { name: 'Node.js', level: 82, category: 'backend', color: '#339933', icon: '🟢' },
-  { name: 'REST APIs', level: 88, category: 'backend', color: '#0EA5E9', icon: '🔗' },
+  { name: 'PHP / Laravel', level: 85, category: 'backend', color: '#777BB4', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg' },
+  { name: 'Python', level: 78, category: 'backend', color: '#3776AB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg' },
+  { name: 'Node.js', level: 82, category: 'backend', color: '#339933', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg' },
+  { name: 'REST APIs', level: 88, category: 'backend', color: '#0EA5E9', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg' },
 
   // Mobile
-  { name: 'Flutter / Dart', level: 83, category: 'mobile', color: '#02569B', icon: '📱' },
-  { name: 'React Native', level: 70, category: 'mobile', color: '#61DAFB', icon: '📲' },
+  { name: 'Flutter / Dart', level: 83, category: 'mobile', color: '#02569B', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg' },
+  { name: 'React Native', level: 70, category: 'mobile', color: '#61DAFB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' },
 
   // Database
-  { name: 'MySQL / SQL', level: 88, category: 'database', color: '#4479A1', icon: '🗄️' },
-  { name: 'Firebase / Firestore', level: 85, category: 'database', color: '#FFCA28', icon: '🔥' },
-  { name: 'Supabase', level: 80, category: 'database', color: '#3ECF8E', icon: '💚' },
+  { name: 'MySQL / SQL', level: 88, category: 'database', color: '#4479A1', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg' },
+  { name: 'Firebase / Firestore', level: 85, category: 'database', color: '#FFCA28', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg' },
+  { name: 'Supabase', level: 80, category: 'database', color: '#3ECF8E', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg' },
 
   // Tools
-  { name: 'Git / GitHub', level: 90, category: 'tools', color: '#F05032', icon: '🔀' },
-  { name: 'VS Code', level: 95, category: 'tools', color: '#007ACC', icon: '💻' },
-  { name: 'Figma', level: 75, category: 'tools', color: '#F24E1E', icon: '🎯' },
-  { name: 'Docker', level: 60, category: 'tools', color: '#2496ED', icon: '🐳' },
-  { name: 'Vercel / Netlify', level: 85, category: 'tools', color: '#000000', icon: '▲' },
-  { name: 'Networking', level: 72, category: 'tools', color: '#0EA5E9', icon: '🌍' },
+  { name: 'Git / GitHub', level: 90, category: 'tools', color: '#F05032', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg' },
+  { name: 'VS Code', level: 95, category: 'tools', color: '#007ACC', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg' },
+  { name: 'Figma', level: 75, category: 'tools', color: '#F24E1E', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg' },
+  { name: 'Docker', level: 60, category: 'tools', color: '#2496ED', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg' },
+  { name: 'Vercel / Netlify', level: 85, category: 'tools', color: '#38AFB3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/netlify/netlify-original.svg' },
+  { name: 'Networking', level: 72, category: 'tools', color: '#0EA5E9', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg' },
 ]
 
 const SkillCard = ({ skill, index, isInView }) => {
@@ -74,8 +74,12 @@ const SkillCard = ({ skill, index, isInView }) => {
             className="w-9 h-9 rounded flex items-center justify-center text-lg transition-all duration-300 border border-white/[0.04]"
             style={{ backgroundColor: `${skill.color}0a` }}
           >
-            <motion.span animate={hovered ? { scale: 1.15, rotate: 5 } : { scale: 1, rotate: 0 }}>
-              {skill.icon}
+            <motion.span animate={hovered ? { scale: 1.15, rotate: 5 } : { scale: 1, rotate: 0 }} className="flex items-center justify-center">
+              {skill.icon.startsWith('http') ? (
+                <img src={skill.icon} alt={skill.name} className="w-5 h-5 object-contain" />
+              ) : (
+                skill.icon
+              )}
             </motion.span>
           </div>
           <div className="flex-1 min-w-0">
