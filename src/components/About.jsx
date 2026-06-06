@@ -35,7 +35,7 @@ const About = () => {
           </h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-[2fr_1fr] gap-12 items-start">
+        <div className="grid lg:grid-cols-[2fr_1fr] gap-8 lg:gap-12 items-start">
           {/* Left - Story */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -43,7 +43,7 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div
-              className="rounded-2xl p-8 sm:p-10"
+              className="rounded-2xl p-6 sm:p-8 sm:p-10"
               style={{
                 background: 'rgba(15,15,28,0.6)',
                 border: '0.5px solid rgba(255,255,255,0.08)',
@@ -191,7 +191,7 @@ const About = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.6, duration: 0.6 }}
-          className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-4"
+          className="mt-12 sm:mt-16 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4"
         >
           {[
             { value: '10+', suffix: '', label: 'Projects Shipped' },

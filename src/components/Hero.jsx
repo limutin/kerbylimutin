@@ -52,8 +52,8 @@ const Hero = () => {
         />
       </motion.div>
 
-      <motion.div style={{ opacity }} className="container-custom w-full section-padding pt-40 lg:pt-48">
-        <div className="grid lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-16 items-center">
+      <motion.div style={{ opacity }} className="container-custom w-full section-padding pt-28 sm:pt-36 lg:pt-48">
+        <div className="grid lg:grid-cols-[1.3fr_1fr] gap-10 lg:gap-16 items-center">
 
           {/* Left — Content */}
           <div className="space-y-7">
@@ -62,11 +62,11 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="flex flex-wrap items-center gap-4"
+              className="flex flex-wrap items-center gap-3"
             >
               <span className="section-index mb-0">001 — Introduction</span>
               <div
-                className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-[10px] font-medium font-mono uppercase tracking-wider"
+                className="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full text-[10px] font-medium font-mono uppercase tracking-wider"
                 style={{
                   border: '0.5px solid rgba(94,255,170,0.25)',
                   background: 'rgba(94,255,170,0.04)',
@@ -77,7 +77,8 @@ const Hero = () => {
                 <span className="signal-dot">
                   <span className="signal-dot-inner" />
                 </span>
-                Available for internships, freelance, & junior developer roles
+                <span className="hidden sm:inline">Available for internships, freelance, &amp; junior developer roles</span>
+                <span className="sm:hidden">Available for hire</span>
               </div>
             </motion.div>
 
@@ -207,9 +208,9 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.95, x: 30 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ delay: 0.5, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="flex justify-center"
+            className="flex justify-center order-first lg:order-last"
           >
-            <div className="relative card-corners">
+            <div className="relative card-corners w-full max-w-[300px] sm:max-w-[380px] lg:max-w-[450px] xl:max-w-[500px]">
               {/* Glow behind */}
               <div
                 className="absolute -inset-8 rounded-3xl"
@@ -218,7 +219,7 @@ const Hero = () => {
 
               {/* Main image card */}
               <div
-                className="relative w-[380px] sm:w-[440px] md:w-[480px] lg:w-[450px] xl:w-[500px] overflow-hidden rounded-xl"
+                className="relative w-full overflow-hidden rounded-xl"
                 style={{
                   background: 'linear-gradient(135deg, #C17BE8 0%, #9080F0 45%, #6080FF 100%)',
                   boxShadow: '0 60px 120px -30px rgba(127,80,220,0.5), 0 0 0 0.5px rgba(255,255,255,0.1) inset',

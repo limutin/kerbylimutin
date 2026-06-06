@@ -94,7 +94,7 @@ const TimelineItem = ({ item, index, isInView }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ delay: Math.min(index * 0.08, 0.6), duration: 0.5 }}
-      className={`relative flex items-start gap-6 md:gap-8 ${
+      className={`relative flex items-start gap-4 md:gap-8 ${
         isLeft ? 'md:flex-row' : 'md:flex-row-reverse'
       } flex-row`}
     >
@@ -102,11 +102,11 @@ const TimelineItem = ({ item, index, isInView }) => {
       <div className="flex-1 text-left">
         <motion.div
           whileHover={{ y: -4 }}
-          className="glass-card p-6 inline-block w-full card-corners border border-white/[0.04]"
+          className="glass-card p-4 sm:p-6 inline-block w-full card-corners border border-white/[0.04]"
           style={{ borderRadius: '4px' }}
         >
           {/* Timeline Entry Header */}
-          <div className="flex items-center justify-between gap-4 mb-3 flex-wrap">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-4 mb-3">
             <span className={`font-mono text-xs ${colors.text}`}>
               [{item.year} // {item.type.toUpperCase()}]
             </span>
@@ -180,7 +180,7 @@ const Experience = () => {
           {/* Glowing dashed vertical center line */}
           <div className="absolute left-[19px] md:left-1/2 top-0 bottom-0 w-px border-l border-dashed border-white/10 md:-translate-x-0.5" />
 
-          <div className="space-y-8 md:space-y-12">
+          <div className="space-y-6 md:space-y-12 pl-2 md:pl-0">
             {timelineData.map((item, i) => (
               <TimelineItem key={i} item={item} index={i} isInView={isInView} />
             ))}

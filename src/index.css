@@ -97,6 +97,22 @@
   .container-custom {
     max-width: 1400px;
     margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container-custom {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-custom {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
   }
 
   /* ============ BUTTONS ============ */
@@ -372,4 +388,44 @@
   top: 0;
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(193, 123, 232, 0.6) 30%, rgba(96, 128, 255, 0.6) 70%, transparent);
+}
+
+/* ============ MOBILE SAFETY ============ */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Minimum touch target size */
+@media (max-width: 768px) {
+  button, a {
+    min-height: 36px;
+  }
+
+  .section-padding {
+    padding: 4.5rem 1rem;
+  }
+
+  /* Prevent hover states from staying on mobile */
+  .glass-card:hover {
+    transform: none;
+  }
+
+  /* Make modals full-width on mobile */
+  .max-w-2xl,
+  .max-w-3xl {
+    max-width: calc(100vw - 2rem) !important;
+  }
+}
+
+/* Fix for elements that might cause horizontal overflow */
+img {
+  max-width: 100%;
+}
+
+/* ============ MOBILE NAV SCROLL ============ */
+@media (max-width: 1023px) {
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
 }
